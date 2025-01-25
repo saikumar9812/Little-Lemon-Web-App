@@ -29,7 +29,6 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,7 +36,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'restaurant'
+    'restaurant',  # Your app
+    'rest_framework',  # Add Django REST framework
+    'djoser',  # Add Djoser for DRF authentication
 ]
 
 MIDDLEWARE = [
