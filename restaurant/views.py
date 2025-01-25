@@ -2,7 +2,17 @@ from django.shortcuts import render
 from .forms import BookingForm
 from .models import Menu
 
-# Create your views here.
+from rest_framework import viewsets
+from .models import Menu, Booking
+from .serializers import MenuSerializer, BookingSerializer
+
+class MenuViewSet(viewsets.ModelViewSet):
+    queryset = Menu.objects.all()
+    serializer_class = MenuSerializer
+
+class BookingViewSet(viewsets.ModelViewSet):
+    queryset = Booking.objects.all()
+    serializer_class = BookingSerializer
 def home(request):
     return render(request, "index.html")
 
